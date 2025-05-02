@@ -1,5 +1,5 @@
 from django import template
-from django.utils.http import urlunquote
+from django.utils.http import unquote
 from urllib.parse import urlparse
 
 from main.models import MenuItem
@@ -42,7 +42,7 @@ def get_active_ids(active_item, items_by_id):
 def draw_menu(context, menu_name):
     """Template tag, определить активный пункт по request.path"""
     request = context['request']
-    current_path = normalize_path(urlunquote(request.path))
+    current_path = normalize_path(unquote(request.path))
     items = MenuItem.objects \
         .filter(menu__name=menu_name) \
         .select_related('parent') \

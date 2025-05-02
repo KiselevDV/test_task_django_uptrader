@@ -21,44 +21,44 @@ Django-приложение, которое реализует древовид�
 
 ### Локальный запуск
 
-1. Клонируйте репозиторий:
+1. Клонировать репозиторий:
     ```bash
     git clone https://github.com/KiselevDV/test_task_django_uptrader.git
     cd test-task-django-uptrader
     ```
 
-2. Установите зависимости и выполните миграции:
+2. Установить зависимости и выполните миграции:
     ```bash
     poetry install
     python manage.py migrate
     python manage.py createsuperuser
     ```
 
-3. Запустите сервер:
+3. Запустить сервер:
     ```bash
     python manage.py runserver
     ```
 
-4. Откройте в браузере:
+4. Открыть в браузере:
     ```
     http://127.0.0.1:8000/
     ```
 
 ### Запуск с Docker
 
-1. Соберите и запустите контейнер:
+1. Собрать и запустить контейнер:
     ```bash
     docker-compose up -d
     ```
 
-2. Откройте в браузере:
+2. Открыть в браузере:
     ```
     http://localhost:18000/
     ```
 
 ## Использование
 
-- Добавляйте меню и пункты меню в Django-админке.
+- Добавить меню и пункты меню в Django-админке.
 - Для отображения меню используйте template tag:
     ```django
     {% load main_tags %}
