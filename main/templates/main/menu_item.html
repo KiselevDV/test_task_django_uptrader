@@ -1,0 +1,13 @@
+{# templates/main/menu_item.html #}
+<li>
+    <a href="{{ item.absolute_url }}" {% if item.id in active_ids %}class="active"{% endif %}>
+        {{ item.title }}
+    </a>
+    {% if item.children_list and item.id in active_ids %}
+        <ul>
+            {% for child in item.children_list %}
+                {% include "main/menu_item.html" with item=child active_ids=active_ids %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>
